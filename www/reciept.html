@@ -3,6 +3,7 @@
 <head> 
 <meta charset="utf-8"> 
 <title>receipt</title> 
+<link href="css/index.css" rel="stylesheet" type="text/css"/>
 <!-- <link rel="stylesheet" type="text/css" href="css/reciept.css"> -->
 <!-- <link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
 <script type="text/javascript" src="cordova.js"></script>
@@ -20,31 +21,56 @@
 <script src="js/index.js"></script>   -->
 </head>
 <body>
+    <input style="margin: 20px; padding: 0;width: 115px; height:50px;" type="button" name="backtofridge" value="< Back to My fridge" />
+    <div class="myReceipt">My Receipt</div>
 
-<div class="" id="container" style="width:400px">
+    <div class="showReceipt">
+      <img src="images/receipt.jpeg" style="float:left; margin-right:20px;" width="140px" height="330px" />
+      <div class="" id="list"
+      style="float:left; height:350px;width:190px;">
+        <span style="font-size:13px;">My Ingredients</span>
+        <ul id="scanned_items" style="list-style-type:none;list-style: none; padding-left:10px;padding-right:10px;margin-top:5px;margin-bottom:5px;">
+          <li class = "scanned-item">
+            <span style = "width:140px; font-size:10px;"> egg
+              <button style = "width:20px; height:20px; padding: 2px;margin:2px;position: absolute;top:145px; left:325px;" onclick="">
+                <img src="icon/edit.jpg" width="10px" height="10px"/>
+              </button>
+              <button style = "width:20px;height:20px; padding: 2px;margin:2px;position: absolute;top:145px; left:350px;" onclick="">
+                <img src="icon/delete.png" width="10px" height="10px"/>
+              </button>
+            </span>
+          </li>
+          <li class = "scanned-item">
+            <span style = "width:140px; font-size:10px;"> tomato
+              <button style = "width:20px; height:20px; padding:2px;margin:2px;position: absolute;top:166px; left:325px;" onclick="">
+                <img src="icon/edit.jpg" width="10px" height="10px"/>
+              </button>
+              <button style = "width:20px;height:20px; padding: 2px;margin:2px;position: absolute;top:166px; left:350px;" onclick="">
+                <img src="icon/delete.png" width="10px" height="10px"/>
+              </button>
+            </span>
+          </li>
+          <li class = "scanned-item">
+            <span style = "width:140px; font-size:10px;"> beef
+              <button style = "width:20px; height:20px; padding:2px;margin:2px;position: absolute;top:188px; left:325px;" onclick="">
+                <img src="icon/edit.jpg" width="10px" height="10px"/>
+              </button>
+              <button style = "width:20px;height:20px; padding: 2px;margin:2px;position: absolute;top:188px; left:350px;" onclick="">
+                <img src="icon/delete.png" width="10px" height="10px"/>
+              </button>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <input style = "width:60px; position: absolute; top:420px; left:200px; color:#30BE76;"type="button" name="add" value="Add Item" />
+    </div>
 
-<div class="" id="header" style="background-color:#FFFFFF;">
-<h3 style="margin-bottom:10px;">My Receipt</h3></div>
 
-<div class="" style="width: 400px; margin-top: 5px; text-align: left;">
-  <input style="width: 115px; height:40px; background-color: #FFFFFF;" type="button" name="backtofridge" value="< Back to My fridge" />
-</div>
-
-<div class="" id="receipt" style="background-color:#FFFFFF;height:400px;width:200px;float:left;">
-  <img id="item_scan" src="" width="180px" height="400px">
-</div>
-
-<div class="" id="list" style="background-color:green;height:440px;width:200px;float:right;">
-My Ingredients
-  <ul id="scanned_items" style="list-style-type:none;list-style: none; padding-left:10px;padding-right:10px;margin-top:5px;margin-bottom:5px;"></ul>
-</div>
-
-<div class="" style="width: 400px; margin-top: 5px; text-align: center;">
-  <input style="width: 325px; height:50px; background-color: #0D3320;" type="button" name="addtomyfridge" value="Add to My Fridge" />
-</div>
+    <div class="" style="width: 400px; margin-top: 10px; text-align: center;">
+      <input style="width: 325px; height:40px; background-color: #30BE76; color:white;" type="button" name="addtomyfridge" value="Add to My Fridge" />
+    </div>
 
 
-</div>
 
 </body>
 </html>
