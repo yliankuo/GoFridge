@@ -2,21 +2,66 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>myFridge</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
-    <div style="font-size:17px; font:Helvetica; width:400px; margin:10px 15px 20px 15px;">
-      MY FRIDGE<input style="float:right" type="button" name="upload" value="upload">
+    <div class="title-Fridge">
+      <span class="myFridge">
+        MY FRIDGE
+        <img src="images/icon_camera.png" width="35px" height="25px">
+      </span>
     </div>
-    <div class="" style="width:380px; margin:0 10px 0 10px;">
-      <input style="width:380px; margin:0 10px 0 10px;" type="text" name="alert" value="">
+
+    <div class="pompt">
+      <img src="images/pic_lectture.png" width="25px" height="25px"><span>  You bought this 8 days ago</span>
     </div>
-    <div class="" style="width:380px; height:300px; margin:0 10px 0 10px;">
+
+    <div class="images-Fridge">
+      <div class="" style="float:left">
+        <img src="images/beef.png" width="155px" height="100px">
+        <p class="description">
+          <input type="checkbox" name="beef" value="beef" />beef
+        </p>
+      </div>
+
+      <div class="" style="float:left">
+        <img style="margin-left:60px;" src="images/chicken.jpg" width="155px" height="100px">
+        <p class="description">
+          <input  style="margin-left:60px;" type="checkbox" name="chicken" value="chicken" />chicken
+        </p>
+      </div>
+
+      <div class="" style="float:left">
+        <img style="margin-top:10px;" src="images/fish.jpg" width="155px" height="100px">
+        <p class="description">
+          <input type="checkbox" name="fish" value="fish" />fish
+        </p>
+      </div>
+
+
+      <div class="" style="float:left">
+        <img style="margin-left:60px; margin-top:10px;" src="images/lam.jpg" width="155px" height="100px">
+        <p class="description">
+          <input style="margin-left:60px;" type="checkbox" name="lam" value="lam" />lam
+        </p>
+      </div>
+
+      <div class="more">
+        <input style="width:120px; height:0px; margin: 15px 0; font: Nunito;
+        color: #30BE76;" type="button" name="more" value="+Add More">
+      </div>
+
+
+    </div>
+
+
+    <input style="background-color: #30BE76; text-align: center; color:white;
+    width:320px; height:50px; margin: 20px 20px;"
+    type="button" name="button" value="Next">
 
 
 
-    </div>
-    <input type="button" name="button" value="button" style="width:380px; margin:0 10px 0 10px;">
 
   </body>
 </html>
