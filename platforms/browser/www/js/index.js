@@ -28,26 +28,6 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        console.log(navigator.camera);
-        navigator.camera.getPicture(onSuccess, onFail, { quality: 100, correctOrientation: true });
-        function onSuccess(imageData) {
-          textocr.recText(0, imageData, onSuccess, onFail); // removed returnType (here 3) from version 2.0.0
-          // for sourceType Use 0,1,2,3 or 4
-          // for returnType Use 0,1,2 or 3 // 3 returns duplicates[see table]
-          function onSuccess(recognizedText) {
-                //var element = document.getElementById('pp');
-                //element.innerHTML=recognizedText;
-                //Use above two lines to show recognizedText in html
-                console.log(recognizedText.words.wordtext.join());
-                alert(recognizedText.words.wordtext.join());
-          }
-          function onFail(message) {
-                alert('Failed because: ' + message);
-          }
-        }
-        function onFail(message) {
-          alert('Failed because: ' + message);
-        }
     },
 
     
