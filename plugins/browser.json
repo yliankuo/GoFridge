@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.Go.Food"
+    },
+    "cordova-plugin-mobile-ocr": {
+      "PACKAGE_NAME": "com.Go.Food"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.Go.Food"
+    }
+  },
+  "dependent_plugins": {}
+}
