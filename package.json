@@ -15,6 +15,7 @@
   "dependencies": {
     "cordova-android": "^8.0.0",
     "cordova-browser": "^6.0.0",
+    "cordova-jquery": "^0.1.6",
     "cordova-plugin-camera": "^4.1.0",
     "cordova-plugin-mobile-ocr": "^3.1.1"
   },
