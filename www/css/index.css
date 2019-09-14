@@ -56,3 +56,21 @@
   margin: 5px 25px;
 
 }
+
+.pics-cuisine{
+  height:158px;
+  width:180px;
+  text-align:center;
+  float:left;
+  margin-left:20px;
+  margin-bottom: 20px;
+}
+
+.pics-Recipes{
+  height:130px;
+  width:330px;
+  text-align:center;
+  float:left;
+  margin-left:20px;
+  margin-bottom: 40px;
+}
