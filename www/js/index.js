@@ -29,18 +29,31 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         // LocalStorage.clear();
-        // LocalStorage.initialize();
+        console.log(window.location.href);
+        if((window.location.href).includes("receipt.html")){
+            app.useCamera();
+        }
+        if((window.location.href).includes("myFridge.html")){
+            app.populateFridge();
+        }
+        LocalStorage.initialize();
         this.receivedEvent('deviceready');
         console.log(navigator.camera);
     },
     useCamera: function(){
-        navigator.camera.getPicture(onSuccess, onFail, { quality: 100, correctOrientation: true });
+        console.log(navigator.camera.getPicture(onSuccess, onFail, { quality: 100, correctOrientation: true }));
+        console.log("A");
         function onSuccess(imageData) {
+            console.log("B");
             app.detectFood(imageData);
         }
         function onFail(message) {
+            console.log("C");
           alert('Failed because: ' + message);
         }
+    },
+    clearFridge: function(){
+        LocalStorage.clear();
     },
     detectFood:function(imageData){
         textocr.recText(0, imageData, onSuccess, onFail); // removed returnType (here 3) from version 2.0.0
@@ -51,7 +64,7 @@ var app = {
             //element.innerHTML=recognizedText;
             //Use above two lines to show recognizedText in html
             // console.log(recognizedText.words.wordtext.join());
-
+            console.log("Scanned");
             var lines = recognizedText.lines.linetext;
             LocalStorage.set("last_scanned",[]);
             for(var i = 0; i < lines.length; i++){
@@ -59,7 +72,6 @@ var app = {
             }
             app.debugOCR();
             app.populateScan();
-            app.populateFridge();
             // alert(recognizedText.words.wordtext.join());
         }
         function onFail(message) {
@@ -68,7 +80,7 @@ var app = {
     },
     populateScan: function(){
         for(var s of LocalStorage.get("last_scanned")){
-            $("#scanned_items").append(('<li class = "scanned-item">            <span style = "width:140px; font-size:10px;">' + s + '<button style = "width:20px; height:20px; padding: 2px;margin:2px;position: absolute;top:145px; left:325px;" onclick=""><img src="icon/edit.jpg" width="10px" height="10px"/></button><button style = "width:20px;height:20px; padding: 2px;margin:2px;position: absolute;top:145px; left:350px;" onclick=""><img src="icon/delete.png" width="10px" height="10px"/></button></span></li>'))
+            $("#scanned_items").append(('<li class = "scanned-item">            <span style = "width:140px; font-size:10px;">' + s + '<button style = "width:20px; height:20px; padding: 2px;margin:2px;position: absolute;top:145px; left:325px;" onclick="app.editScan()"><img src="icon/edit.jpg" width="10px" height="10px"/></button><button style = "width:20px;height:20px; padding: 2px;margin:2px;position: absolute;top:145px; left:350px;" onclick="app.deleteScan()"><img src="icon/delete.png" width="10px" height="10px"/></button></span></li>'))
         }
     },
     deleteScan: function(item){
@@ -92,6 +104,7 @@ var app = {
         app.populateScan();
     },
     addItem :function(){
+        console.log("hey");
         var l = LocalStorage.get("last_scanned");
         var ed = prompt("Add an item");
         if(ed != null && ed.length > 0){
@@ -148,8 +161,10 @@ var app = {
 
     },
     scanReceipt:function(){
-        window.location = "receipt.html";
-        app.useCamera();
+        window.location="receipt.html";
+        $.mobile.pageContainer.pagecontainer("change", "#receipt", { changeHash: true, transition: "none" });
+        // app.useCamera();
+        console.log("Finished");
     },
     prevFour: function(){
         console.log("Prev Four");
